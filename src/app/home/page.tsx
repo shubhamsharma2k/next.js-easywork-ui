@@ -35,7 +35,6 @@ const Home = () => {
           )}
         </Container>
       </div>
-      <button onClick={() => setIsAuthenticated(true)}></button>
     </div>
   );
 };

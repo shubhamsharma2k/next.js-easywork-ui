@@ -1,6 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 import Courses from "./Courses";
-const Transactions = new Schema({
+const Transactions = new mongoose.Schema({
 	receiptNo: {
 		type: String,
 	},
@@ -18,7 +18,7 @@ const Transactions = new Schema({
 	},
 });
 
-const StudentSchema = new Schema({
+const StudentSchema = new mongoose.Schema({
 	studentId: {
 		type: String,
 	},
@@ -59,7 +59,7 @@ const StudentSchema = new Schema({
 	},
 	courseInfo: {
 		course: {
-			type: Schema.Types.ObjectId,
+			type: mongoose.Schema.Types.ObjectId,
 			ref: Courses,
 		},
 		scholarship: {
@@ -83,6 +83,6 @@ const StudentSchema = new Schema({
 	},
 });
 
-const Student = mongoose.models.students || mongoose.model("Student", StudentSchema);
+const Student = mongoose.models.students ?? mongoose.model("students", StudentSchema);
 export default Student;
 

@@ -10,7 +10,6 @@ connect();
 export async function GET(request: NextRequest) {
 	try {
 		let students = await Student.find({});
-		console.log(students)
 		let studentDetails: any[] = [];
 		if (students) {
 			for (let student of students) {
@@ -50,8 +49,6 @@ export async function GET(request: NextRequest) {
 				}
 			}
 		}
-		console.log(studentDetails)
-
 		return NextResponse.json(studentDetails, { status: 200 });
 	} catch (error: any) {
 		return NextResponse.json({ error: error.message }, { status: 500 });

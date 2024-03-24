@@ -1,12 +1,12 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const Affiliations = new Schema({
+const Affiliations = new mongoose.Schema({
 	name: {
 		type: String || null,
 	},
 });
 
-const CoursesSchema = new Schema({
+const CoursesSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		required: true,
@@ -21,6 +21,6 @@ const CoursesSchema = new Schema({
 	},
 });
 
-const Courses = mongoose.models.courses || mongoose.model("courses", CoursesSchema);
+const Courses = mongoose.models.courses ?? mongoose.model("courses", CoursesSchema);
 export default Courses;
 
