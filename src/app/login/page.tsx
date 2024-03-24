@@ -8,6 +8,7 @@ import Link from "next/link";
 export default function Signin() {
   const router = useRouter();
   const [navigationLoader, setNavigationLoader] = useState(true);
+  const [logginIn, setLogginIn] = useState(false);
   const [formValue, updateForm] = useState({ email: "", password: "" });
   const { loginUser } = useStoreActions((action) => action.auth);
   const { isAuthenticated } = useStoreState((state) => state.auth);
@@ -21,11 +22,13 @@ export default function Signin() {
   }, []);
 
   const handleLogin = async () => {
+    setLogginIn(true);
     const rsp = await loginUser({ email: formValue.email, password: formValue.password });
     if (rsp.status === 200) {
       router.push("/home");
-      // await getStudents();
+      await getStudents();
     }
+    setLogginIn(false);
   };
 
   return (
@@ -67,7 +70,11 @@ export default function Signin() {
                     }}
                     onClick={handleLogin}
                   >
-                    Sign in
+                    {logginIn ? (
+                      <Spinner thickness="2px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="sm" />
+                    ) : (
+                      "Sign in"
+                    )}
                   </Button>
                 </Stack>
                 <Stack pt={6}>

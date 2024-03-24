@@ -1,7 +1,6 @@
 import { Action, action, Thunk, thunk } from "easy-peasy";
 import { store } from "../config";
 import { toast } from "react-toastify";
-import { getBearerToken } from "../../services/TokenService";
 export interface CourseModel {
   getCourses: Thunk<CourseModel>;
   postCourse: Thunk<CourseModel, CoursesModel>;

@@ -13,7 +13,7 @@ export const StudentService = {
                     // Authorization: `${token}`,
                 },
             }
-            return await axios.post(url + '/', studentDetails, config)
+            return await axios.post('/api/students', studentDetails, config)
         } catch (err: any) {
             return err
         }
@@ -27,7 +27,7 @@ export const StudentService = {
                     // Authorization: `${token}`,
                 },
             }
-            return await axios.get(url + '/', config)
+            return await axios.get( '/api/students', config)
         } catch (err: any) {
             return err
         }

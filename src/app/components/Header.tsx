@@ -11,6 +11,7 @@ const Header = () => {
   const { logoutUser } = useStoreActions((action) => action.auth);
 
   const { isAuthenticated } = useStoreState((state) => state.auth);
+  console.log(isAuthenticated)
 
   const handleLogout = async () => {
     const rsp = await logoutUser();

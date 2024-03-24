@@ -4,14 +4,18 @@ import { useStoreActions, useStoreState } from "@/store/config";
 import Header from "../components/Header";
 import Students from "../components/Students/Students";
 import SideBar from "../components/SideBar/SideBar";
+import LoadingBar from "react-top-loading-bar";
 
 const Home = () => {
   const { metadataLoading } = useStoreState((state) => state.student);
   const { isAuthenticated } = useStoreState((state) => state.auth);
   const { setIsAuthenticated } = useStoreActions((action) => action.auth);
+  const { progress } = useStoreState((state) => state.misc);
+  const { setProgress } = useStoreActions((action) => action.misc);
 
   return (
     <div>
+      <LoadingBar color="#f11946" progress={progress} onLoaderFinished={() => setProgress(0)} />
       <Header />
       <div className="mt-4">
         <Container maxW={"full"} minH={"container.lg"}>
