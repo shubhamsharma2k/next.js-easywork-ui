@@ -1,3 +1,4 @@
+'use client'
 import { Card, CardBody, Divider, Heading } from "@chakra-ui/react";
 import AddNewStudent from "./studentSection/AddNewStudent";
 import AddCourse from "./courseSection/AddCourse";

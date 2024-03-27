@@ -8,7 +8,6 @@ connect();
 export async function POST(request: NextRequest) {
   try {
     const response = NextResponse.json({},{status:200});
-
     response.cookies.delete("token");
     return response;
   } catch (error: any) {

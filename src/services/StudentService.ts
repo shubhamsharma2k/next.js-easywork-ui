@@ -1,63 +1,63 @@
-import axios from 'axios'
-import { StudentDetailsModel } from '../store/models/student'
+import axios from "axios";
+import { StudentDetailsModel } from "../store/models/student";
 
-const url = 'https://easywork-api.onrender.com/api/student'
+const url = "https://easywork-api.onrender.com/api/student";
 
 export const StudentService = {
-    addNewStudent: async (studentDetails: StudentDetailsModel) => {
-        try {
-            // const token: string = getBearerToken()
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Authorization: `${token}`,
-                },
-            }
-            return await axios.post('/api/students', studentDetails, config)
-        } catch (err: any) {
-            return err
-        }
-    },
-    getStudents: async () => {
-        try {
-            // const token: string = getBearerToken()
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Authorization: `${token}`,
-                },
-            }
-            return await axios.get( '/api/students', config)
-        } catch (err: any) {
-            return err
-        }
-    },
-    updateStudent: async (studentId: string, studentDetails: StudentDetailsModel) => {
-        try {
-            // const token: string = getBearerToken()
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Authorization: `${token}`,
-                },
-            }
-            return await axios.put(url + '/' + studentId, studentDetails, config)
-        } catch (err: any) {
-            return err
-        }
-    },
-    deleteStudent: async (studentId: string) => {
-        try {
-            // const token: string = getBearerToken()
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Authorization: `${token}`,
-                },
-            }
-            return await axios.delete(url + '/' + studentId, config)
-        } catch (err: any) {
-            return err
-        }
-    },
-}
+	addNewStudent: async (studentDetails: StudentDetailsModel) => {
+		try {
+			// const token: string = getBearerToken()
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					// Authorization: `${token}`,
+				},
+			};
+			return await axios.post("/api/students", studentDetails, config);
+		} catch (err: any) {
+			return err;
+		}
+	},
+	getStudents: async () => {
+		try {
+			// const token: string = getBearerToken()
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					// Authorization: `${token}`,
+				},
+			};
+			return await axios.get("/api/students", config);
+		} catch (err: any) {
+			return err;
+		}
+	},
+	updateStudent: async (studentId: string, studentDetails: StudentDetailsModel) => {
+		try {
+			// const token: string = getBearerToken()
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					// Authorization: `${token}`,
+				},
+			};
+			return await axios.put(url + "/" + studentId, studentDetails, config);
+		} catch (err: any) {
+			return err;
+		}
+	},
+	deleteStudent: async (studentId: string) => {
+		try {
+			// const token: string = getBearerToken()
+			const config = {
+				headers: {
+					"Content-Type": "application/json",
+					// Authorization: `${token}`,
+				},
+			};
+			return await axios.delete(url + "/" + studentId, config);
+		} catch (err: any) {
+			return err;
+		}
+	},
+};

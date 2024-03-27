@@ -101,7 +101,7 @@ export default function Signup() {
               <Text align={"center"}>
                 Already a user?{" "}
                 <Link
-                  href={"/"}
+                  href={"/login"}
                   className="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                 >
                   Login

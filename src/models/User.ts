@@ -15,16 +15,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide a password"],
   },
-  token: {
-    type: String,
-  },
   created: {
     type: Date,
     default: Date.now,
-  },
-  isVerified: {
-    type: Boolean,
-    default: false,
   },
 });
 const User = mongoose.models.users || mongoose.model("users", userSchema);
